@@ -1,0 +1,36 @@
+[
+  {
+    "case_id": "balanced-usd-invoice",
+    "fields": {
+      "vendor_name": {"value": "Example Vendor"},
+      "invoice_number": {"value": "SYN-0001"},
+      "invoice_date": {"value": "2026-11-18"},
+      "due_date": {"value": null},
+      "po_number": {"value": null},
+      "currency": {"value": "USD"},
+      "subtotal": {"value": "100.00"},
+      "tax": {"value": "8.00"},
+      "charges": {"value": "0.00"},
+      "discount": {"value": "0.00"},
+      "total": {"value": "108.00"}
+    },
+    "expected": {"total": "pass", "po_presence": "warning"}
+  },
+  {
+    "case_id": "unknown-total",
+    "fields": {
+      "vendor_name": {"value": "Example Vendor"},
+      "invoice_number": {"value": "SYN-0002"},
+      "invoice_date": {"value": "2026-11-18"},
+      "due_date": {"value": null},
+      "po_number": {"value": "PO-SYN"},
+      "currency": {"value": "USD"},
+      "subtotal": {"value": "100.00"},
+      "tax": {"value": null},
+      "charges": {"value": "0.00"},
+      "discount": {"value": "0.00"},
+      "total": {"value": "108.00"}
+    },
+    "expected": {"total": "inconclusive"}
+  }
+]
